@@ -78,11 +78,7 @@ fbins_ag <- function(start_date, until_date, report_level, fb_access_token, acco
 
 fbins_summ <- function(start_date, until_date, report_level, time_increment, fb_access_token, account){
   #set strings
-  sstring <- paste0('"','since','"')
-  ustring <- paste0('"','until','"')
-  #paste together JSON string
-  range_content <- paste0(sstring,':','"',start_date,'"',',',ustring,':','"',until_date,'"')
-  time_range <- paste0("{",range_content,"}")
+  datepreset <- "lifetime"
   #paste together URL
   api_version <- "v3.3"
   url_stem <- "https://graph.facebook.com/"
@@ -92,7 +88,7 @@ fbins_summ <- function(start_date, until_date, report_level, time_increment, fb_
   content_result <- content(GET(URL,
                 query = list(
                   access_token = fb_access_token,
-                  time_range = time_range,
+                  date_preset = datepreset
                   level = report_level,
                   fields = "campaign_name, campaign_id, objective, adset_id, adset_name, ad_id, ad_name, impressions, cpm, reach, frequency, clicks, unique_clicks, ctr, cpc, unique_ctr, cost_per_unique_click, estimated_ad_recall_rate, cost_per_estimated_ad_recallers, spend, canvas_avg_view_time, canvas_avg_view_percent",
                   time_increment=time_increment,
