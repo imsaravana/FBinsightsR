@@ -87,7 +87,7 @@ fbins_summ <- function(date_preset, report_level, time_increment, fb_access_toke
   content_result <- content(GET(URL,
                 query = list(
                   access_token = fb_access_token,
-                  date_preset = date_preset
+                  date_preset = date_preset,
                   level = report_level,
                   fields = "campaign_name, campaign_id, objective, adset_id, adset_name, ad_id, ad_name, impressions, cpm, reach, frequency, clicks, unique_clicks, ctr, cpc, unique_ctr, cost_per_unique_click, estimated_ad_recall_rate, cost_per_estimated_ad_recallers, spend, canvas_avg_view_time, canvas_avg_view_percent",
                   time_increment=time_increment,
