@@ -91,7 +91,7 @@ fbins_summ <- function(date_preset, report_level, time_increment, fb_access_toke
                   date_preset = date_preset,
                   level = report_level,
                   filtering = "[{'field':'adset.effective_status','operator':'IN','value':['ACTIVE']}]",
-                  fields = "campaign_name, campaign_id, objective, purchase_roas,adset_id, adset_name, ad_id, ad_name, impressions, cpm, reach, frequency, clicks, unique_clicks, ctr, cpc, unique_ctr, cost_per_unique_click, estimated_ad_recall_rate, cost_per_estimated_ad_recallers, spend, canvas_avg_view_time, canvas_avg_view_percent",
+                  fields = "campaign_name, campaign_id, objective, purchase_roas, action_values, adset_id, adset_name, ad_id, ad_name, impressions, cpm, reach, frequency, clicks, unique_clicks, ctr, cpc, unique_ctr, cost_per_unique_click, estimated_ad_recall_rate, cost_per_estimated_ad_recallers, spend, canvas_avg_view_time, canvas_avg_view_percent",
                   time_increment=time_increment,
                   limit = "1000"
                 ),
